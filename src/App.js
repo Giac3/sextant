@@ -77,11 +77,11 @@ function App() {
             <Slider {...settings}>
           <div className='card'>
             <h3 className='card-top'>ipv4</h3>
-            <p className='card-top'>{ipv4}</p>
+            <p className='card-bottom'>{ipv4}</p>
           </div>
           <div className='card'>
             <h3 className='card-top'>ipv6</h3>
-            <p className='card-top'>{ipv6}</p>
+            <p className='card-bottom'>{ipv6}</p>
           </div>
           <div className='card'>
             <h3 className='card-top'>3</h3>

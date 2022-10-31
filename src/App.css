@@ -38,10 +38,14 @@
 
 .card-top  {
   text-align: center;
+  
 }
 
 .card-bottom  {
   text-align: center;
+  font-size: small;
+  background-color: black;
+  border-radius: 10px;
 }
 
 .header {
