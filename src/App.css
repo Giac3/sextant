@@ -22,10 +22,10 @@
 }
 
 .slick-slide > div {
-  margin: 0 10px ;
+  margin: 0 9px ;
 }
 .slick-list {
-  margin: 0 -10px;
+  margin: 0 -9px;
 }
 
 .card {
@@ -34,16 +34,13 @@
   overflow: hidden;
 }
 
-.card-top {
-  width: 100%;
-  height: 100%;
-}
 
-.card-top h1 {
+
+.card-top  {
   text-align: center;
 }
 
-.card-bottom h3 {
+.card-bottom  {
   text-align: center;
 }
 

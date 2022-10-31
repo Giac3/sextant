@@ -1,12 +1,38 @@
 import './App.css';
-import { data } from './data';
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import axios from "axios"; 
+import { useState, useEffect } from 'react'
 
 const backpic = new URL("./coolback.jpg", import.meta.url)
 
 function App() {
+
+  const [ipv4, setipv4] = useState([])
+
+  useEffect( () => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    const {data} = await axios.get('https://api.ipify.org?format=json')
+
+    setipv4(data.ip)
+  }
+
+  const [ipv6, setipv6] = useState([])
+
+  useEffect( () => {
+    fetchData2()
+  }, [])
+
+  const fetchData2 = async () => {
+    const {data} = await axios.get('https://api64.ipify.org?format=json')
+
+    setipv6(data.ip)
+  }
+  
   const settings = {
     dots: true,
     infinite: false,
@@ -42,23 +68,34 @@ function App() {
     ]
   };
   return (
+ 
     
     <section >
+
+      
             <div className='sliderview'>
-      <Slider {...settings} className='cards'>
-{data.map((item) => (
-  <div className='card'>
-  <div className='card-top'>
-    <h1>{item.title}</h1>
-  </div>
-  <div className='card-bottom'>
-    <h3>
-      Hello
-    </h3>
-  </div>
-  </div>
-))}
-</Slider>
+            <Slider {...settings}>
+          <div className='card'>
+            <h3 className='card-top'>ipv4</h3>
+            <p className='card-top'>{ipv4}</p>
+          </div>
+          <div className='card'>
+            <h3 className='card-top'>ipv6</h3>
+            <p className='card-top'>{ipv6}</p>
+          </div>
+          <div className='card'>
+            <h3 className='card-top'>3</h3>
+          </div>
+          <div className='card'>
+            <h3 className='card-top'>4</h3>
+          </div>
+          <div className='card'>
+            <h3 className='card-top'>5</h3>
+          </div>
+          <div className='card'>
+            <h3 className='card-top'>6</h3>
+          </div>
+        </Slider>
 
       </div>
       <div>
