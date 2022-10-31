@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Wow new app fro cisco
         </a>
       </header>
     </div>
