@@ -103,16 +103,7 @@ socket.onmessage = ({ data }) => {
             <h3 className='card-top'>Latency</h3>
             <p className='card-bottom'>{(new Date().getTime())- stamp}</p>
           </div>
-          <div className='card'>
-          <h3 className='card-top'>Nothing Here yet</h3>
-            <p className='card-bottom'>Hello</p>
-          </div>
-          <div className='card'>
-            <h3 className='card-top'>5</h3>
-          </div>
-          <div className='card'>
-            <h3 className='card-top'>6</h3>
-          </div>
+          
         </Slider>
 
       </div>
