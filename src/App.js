@@ -7,7 +7,11 @@ import { useState, useEffect } from 'react'
 
 const backpic = new URL("./coolback.jpg", import.meta.url)
 
+
+
+
 function App() {
+
 
   const [ipv4, setipv4] = useState([])
 
@@ -32,13 +36,21 @@ function App() {
 
     setipv6(data.ip)
   }
+
+  const [stamp, setstamp] = useState([])
+
+  const socket = new WebSocket("ws://localhost:55455" );
+socket.onmessage = ({ data }) => {
+  setstamp(data)
   
+};
+
   const settings = {
     dots: true,
     infinite: false,
     speed: 1000,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {
@@ -67,6 +79,10 @@ function App() {
       }
     ]
   };
+
+  
+
+
   return (
  
     
@@ -84,10 +100,12 @@ function App() {
             <p className='card-bottom'>{ipv6}</p>
           </div>
           <div className='card'>
-            <h3 className='card-top'>3</h3>
+            <h3 className='card-top'>Latency</h3>
+            <p className='card-bottom'>{(new Date().getTime())- stamp}</p>
           </div>
           <div className='card'>
-            <h3 className='card-top'>4</h3>
+          <h3 className='card-top'>Nothing Here yet</h3>
+            <p className='card-bottom'>Hello</p>
           </div>
           <div className='card'>
             <h3 className='card-top'>5</h3>
